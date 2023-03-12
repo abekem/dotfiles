@@ -7,6 +7,9 @@ set number
 " undoを永続化
 set undofile
 
+" packer.nvim
+lua require('plugins')
+
 if exists('g:vscode')
 
 

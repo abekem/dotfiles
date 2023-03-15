@@ -3,3 +3,5 @@
 	email = nek.7180@gmail.com
 [core]
 	editor = nvim
+[init]
+	defaultBranch = main

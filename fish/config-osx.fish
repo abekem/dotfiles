@@ -1,1 +1,1 @@
-set DOCKER_HOST unix://$HOME/docker.sock
+set DOCKER_HOST unix:///Users/abekem/.lima/docker/sock/docker.sock

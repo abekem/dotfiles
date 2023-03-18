@@ -4,6 +4,7 @@ set nocompatible
 set clipboard+=unnamedplus
 " 行番号を表示
 set number
+set relativenumber
 " undoを永続化
 set undofile
 " 日本語の文字コード対応
@@ -25,7 +26,7 @@ set expandtab
 
 " packer.nvim
 lua require('plugins')
-"lua require('telescope')
+lua require('highlights')
 
 if exists('g:vscode')
 
@@ -55,6 +56,4 @@ nmap <Tab> :tabnext<Return>
 " 	autocmd InsertLeave * :call system('zenhan 0')
 " 	autocmd CmdlineLeave * :call system('zenhan 0')
 " endif
-
-nmap ;f :Telescope find_files<Return>
 

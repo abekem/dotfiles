@@ -4,6 +4,9 @@ end
 
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
+# nvim
+alias vim='nvim'
+
 switch (uname)
   case Darwin
     source (dirname (status --current-filename))/config-osx.fish

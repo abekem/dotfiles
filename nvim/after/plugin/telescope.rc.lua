@@ -1,5 +1,6 @@
 local status, telescope = pcall(require, "telescope")
 if (not status) then return end
+if vim.g.vscode then return end
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 
@@ -61,4 +62,3 @@ vim.keymap.set("n", "sf", function()
     layout_config = { height = 40 }
   })
 end)
-

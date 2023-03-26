@@ -11,20 +11,25 @@ end
 
 packer.startup(function(use)
   -- Packer can manage itself
-  use {'wbthomason/packer.nvim', opt=true}
-
+  use { 'wbthomason/packer.nvim', opt=true }
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
+  use { 'nvim-lualine/lualine.nvim' }
+  use { 'nvim-lua/plenary.nvim' }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  }
+  use { 'nvim-tree/nvim-web-devicons' }
 
   -- install telescope
-  use {'nvim-lua/plenary.nvim'}
-  use {'nvim-telescope/telescope.nvim'}
-  use {'nvim-telescope/telescope-file-browser.nvim'}
+  use { 'nvim-telescope/telescope.nvim' }
+  use { 'nvim-telescope/telescope-file-browser.nvim' }
+  use { 'akinsho/nvim-bufferline.lua' }
 
-  use {'nvim-tree/nvim-web-devicons'}
-
-  use {'keaising/im-select.nvim'}
+  use { 'keaising/im-select.nvim' }
 end)
 

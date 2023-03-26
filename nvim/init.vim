@@ -21,6 +21,7 @@ set expandtab
 
 lua require('plugins')
 lua require('highlights')
+lua require('maps')
 
 if exists('g:vscode')
 
@@ -33,18 +34,3 @@ else
     " ファイルタイプ検出
     filetype plugin indent on
 endif
-
-" Split window
-nmap ss :split<Return><C-w>w
-nmap sv :vsplit<Return><C-w>w
-
-" Move window
-map sh <C-w>h
-map sk <C-w>k
-map sj <C-w>j
-map sl <C-w>l
-
-" Switch tab
-nmap <S-Tab> :tabprev<Return>
-nmap <Tab> :tabnext<Return>
-

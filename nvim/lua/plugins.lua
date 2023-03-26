@@ -32,4 +32,3 @@ packer.startup(function(use)
 
   use { 'keaising/im-select.nvim' }
 end)
-

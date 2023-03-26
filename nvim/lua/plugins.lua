@@ -24,5 +24,7 @@ packer.startup(function(use)
   use {'nvim-telescope/telescope-file-browser.nvim'}
 
   use {'nvim-tree/nvim-web-devicons'}
+
+  use {'keaising/im-select.nvim'}
 end)
 

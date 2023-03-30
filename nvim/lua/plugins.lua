@@ -19,6 +19,10 @@ packer.startup(function(use)
   use { 'nvim-lualine/lualine.nvim' }
   use { 'nvim-lua/plenary.nvim' }
 
+  use { 'neovim/nvim-lspconfig' } -- LSP
+  use { 'williamboman/mason.nvim' }
+  use { 'williamboman/mason-lspconfig.nvim' }
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,

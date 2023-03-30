@@ -18,7 +18,11 @@ packer.startup(function(use)
   }
   use { 'nvim-lualine/lualine.nvim' }
   use { 'nvim-lua/plenary.nvim' }
+  use { 'folke/lsp-colors.nvim' }
+  use { 'norcalli/nvim-colorizer.lua' }
 
+  use { 'hrsh7th/cmp-nvim-lsp' } -- nvim-cmp source for neovim's built-in LSP
+  use { 'hrsh7th/nvim-cmp' } -- Completion
   use { 'neovim/nvim-lspconfig' } -- LSP
   use { 'williamboman/mason.nvim' }
   use { 'williamboman/mason-lspconfig.nvim' }

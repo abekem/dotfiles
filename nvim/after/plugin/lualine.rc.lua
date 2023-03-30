@@ -1,6 +1,6 @@
+if vim.g.vscode then return end
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
-if vim.g.vscode then return end
 
 lualine.setup {
   options = {

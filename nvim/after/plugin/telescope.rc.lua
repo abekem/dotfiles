@@ -1,6 +1,6 @@
+if vim.g.vscode then return end
 local status, telescope = pcall(require, "telescope")
 if (not status) then return end
-if vim.g.vscode then return end
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 

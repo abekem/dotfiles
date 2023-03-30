@@ -1,6 +1,6 @@
+if vim.g.vscode then return end
 local status, bufferline = pcall(require, "bufferline")
 if (not status) then return end
-if vim.g.vscode then return end
 
 bufferline.setup({
   options = {

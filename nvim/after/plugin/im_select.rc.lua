@@ -1,3 +1,4 @@
+if vim.g.vscode then return end
 local status, im_select = pcall(require, "im_select")
 if (not status) then return end
 

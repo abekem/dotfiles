@@ -4,7 +4,7 @@ if not vim.g.vscode then
   vim.opt.relativenumber = true
   -- 日本語の文字コード対応
   vim.opt.ambiwidth = "single"
-  vim.opt.shiftwidth = 4
+  vim.opt.shiftwidth = 2
   vim.opt.smarttab = true
   vim.opt.expandtab = true
   -- 読み込み時の文字コードの自動判別. 左側が優先される

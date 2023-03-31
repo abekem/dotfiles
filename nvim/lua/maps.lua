@@ -20,3 +20,6 @@ keymap.set('', 'sh', '<C-w>h')
 keymap.set('', 'sk', '<C-w>k')
 keymap.set('', 'sj', '<C-w>j')
 keymap.set('', 'sl', '<C-w>l')
+
+-- Escape
+keymap.set('i', 'jj', '<Esc>')

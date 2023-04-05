@@ -25,6 +25,10 @@ M.lua = function()
   set_indent(2, false)
 end
 
+M.html = function()
+  set_indent(4, false)
+end
+
 return setmetatable(M, {
   __index = function()
     return function()

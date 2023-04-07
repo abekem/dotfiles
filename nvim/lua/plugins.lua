@@ -47,6 +47,7 @@ packer.startup(function(use)
       'JoosepAlviste/nvim-ts-context-commentstring'
     }
   }
+  use { "kylechui/nvim-surround" }
   use { 'akinsho/nvim-bufferline.lua' }
 
   use { 'lewis6991/gitsigns.nvim' }

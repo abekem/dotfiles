@@ -19,7 +19,8 @@ null_ls.setup {
     null_ls.builtins.diagnostics.eslint_d.with({
       diagnostics_format = '[eslint] #{m}\n(#{c})'
     }),
-    null_ls.builtins.diagnostics.fish
+    null_ls.builtins.diagnostics.fish,
+    null_ls.builtins.formatting.google_java_format,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
@@ -42,3 +43,4 @@ vim.api.nvim_create_user_command(
   end,
   { nargs = 0 }
 )
+vim.keymap.set('n', '<leader>mm', function() vim.lsp.buf.format { async = true } end)

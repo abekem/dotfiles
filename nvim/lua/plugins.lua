@@ -40,6 +40,13 @@ packer.startup(function(use)
   -- install telescope
   use { 'nvim-telescope/telescope.nvim' }
   use { 'nvim-telescope/telescope-file-browser.nvim' }
+  use { 'windwp/nvim-autopairs' }
+  use { 'windwp/nvim-ts-autotag' }
+  use { 'numToStr/Comment.nvim',
+    requires = {
+      'JoosepAlviste/nvim-ts-context-commentstring'
+    }
+  }
   use { 'akinsho/nvim-bufferline.lua' }
 
   use { 'lewis6991/gitsigns.nvim' }

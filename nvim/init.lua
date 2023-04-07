@@ -21,6 +21,13 @@ if not vim.g.vscode then
   })
 end
 
+if vim.fn.has "macunix" == 1 then
+  vim.opt.clipboard:append { 'unnamedplus' }
+end
+if vim.fn.has "win32" == 1 then
+  vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
+end
+
 -- undoを永続化
 vim.opt.undofile = true
 

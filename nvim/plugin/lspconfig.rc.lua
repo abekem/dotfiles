@@ -109,10 +109,12 @@ nvim_lsp.cssls.setup {
   capabilities = capabilities
 }
 
-nvim_lsp.jdtls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
+if vim.fn.has "macunix" == 1 or vim.fn.has "wsl" == 1 then
+  nvim_lsp.jdtls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
+end
 
 nvim_lsp.html.setup {
   on_attach = on_attach,

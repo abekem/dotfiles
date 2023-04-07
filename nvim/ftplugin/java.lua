@@ -38,6 +38,7 @@ if vim.fn.has "win32" == 1 then
       '--add-modules=ALL-SYSTEM',
       '--add-opens', 'java.base/java.util=ALL-UNNAMED',
       '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+      '-javaagent:' .. vim.env.MASON .. '/packages/jdtls/lombok.jar',
 
       -- 💀
       '-jar', vim.env.MASON .. '/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
@@ -63,7 +64,10 @@ if vim.fn.has "win32" == 1 then
     -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
     -- for a list of options
     settings = {
+      ['java.format.settings.url'] = root_dir .. "/eclipse-java-google-style.xml",
+      ['java.format.settings.profile'] = "GoogleStyle",
       java = {
+        autobuild = { enabled = false },
       }
     },
     -- Language server `initializationOptions`

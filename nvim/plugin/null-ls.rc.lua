@@ -20,7 +20,7 @@ null_ls.setup {
       diagnostics_format = '[eslint] #{m}\n(#{c})'
     }),
     null_ls.builtins.diagnostics.fish,
-    null_ls.builtins.formatting.google_java_format,
+    --null_ls.builtins.formatting.google_java_format,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then

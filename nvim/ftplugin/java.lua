@@ -11,11 +11,13 @@ if vim.fn.has "wsl" == 1 then
   }
 end
 if vim.fn.has "win32" == 1 then
-  -- config = require("myconfig.lsp.jdtls").setup()
-  -- config = {
-  --   cmd = { vim.env.MASON .. '\\bin\\jdtls.cmd' },
-  --   root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
-  -- }
+  vim.api.nvim_exec([[
+        augroup FormatAutogroup
+          autocmd!
+          autocmd BufWritePost *.java FormatWrite
+          autocmd VimLeavePre autocmd_delete(FormatAutogroup)
+        augroup end
+      ]], true)
   local root_markers = { ".gradle", "gradlew", ".git" }
   local root_dir = jdtls.setup.find_root(root_markers)
   local home = vim.env.HOME

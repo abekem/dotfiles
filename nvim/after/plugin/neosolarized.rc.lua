@@ -1,3 +1,4 @@
+if vim.g.vscode then return end
 local status, n = pcall(require, "neosolarized")
 if (not status) then return end
 

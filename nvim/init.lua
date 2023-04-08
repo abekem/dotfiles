@@ -28,7 +28,10 @@ if vim.fn.has "win32" == 1 then
   vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
 end
 
--- undoを永続化
+-- 折り畳みをインデント単位で有効にする
+vim.opt.foldmethod = "indent"
+vim.opt.foldenable = false
+--undoを永続化
 vim.opt.undofile = true
 
 require('plugins')

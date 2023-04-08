@@ -11,13 +11,16 @@ if vim.fn.has "wsl" == 1 then
   }
 end
 if vim.fn.has "win32" == 1 then
-  vim.api.nvim_exec([[
-        augroup FormatAutogroup
-          autocmd!
-          autocmd BufWritePost *.java FormatWrite
-          autocmd VimLeavePre autocmd_delete(FormatAutogroup)
-        augroup end
-      ]], true)
+  vim.api.nvim_create_augroup("JavaFormat", {})
+  local command_format = vim.api.nvim_create_autocmd("BufWritePre", {
+    group = "JavaFormat",
+    pattern = { "*.java" },
+    callback = function() vim.lsp.buf.format { async = true } end
+  })
+  vim.api.nvim_create_autocmd("VimLeavePre", {
+    group = 'JavaFormat',
+    callback = function() vim.api.nvim_del_autocmd(command_format) end
+  })
   local root_markers = { ".gradle", "gradlew", ".git" }
   local root_dir = jdtls.setup.find_root(root_markers)
   local home = vim.env.HOME

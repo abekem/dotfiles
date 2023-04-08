@@ -37,33 +37,8 @@ local on_attach = function(client, bufnr)
   --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 end
 
-protocol.CompletionItemKind = {
-  '', -- Text
-  '', -- Method
-  '', -- Function
-  '', -- Constructor
-  '', -- Field
-  '', -- Variable
-  '', -- Class
-  'ﰮ', -- Interface
-  '', -- Module
-  '', -- Property
-  '', -- Unit
-  '', -- Value
-  '', -- Enum
-  '', -- Keyword
-  '﬌', -- Snippet
-  '', -- Color
-  '', -- File
-  '', -- Reference
-  '', -- Folder
-  '', -- EnumMember
-  '', -- Constant
-  '', -- Struct
-  '', -- Event
-  'ﬦ', -- Operator
-  '', -- TypeParameter
-}
+-- global key map
+vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.format { async = true } <CR>')
 
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -146,3 +121,31 @@ vim.diagnostic.config({
     source = "always", -- Or "if_many"
   },
 })
+
+protocol.CompletionItemKind = {
+  '', -- Text
+  '', -- Method
+  '', -- Function
+  '', -- Constructor
+  '', -- Field
+  '', -- Variable
+  '', -- Class
+  'ﰮ', -- Interface
+  '', -- Module
+  '', -- Property
+  '', -- Unit
+  '', -- Value
+  '', -- Enum
+  '', -- Keyword
+  '﬌', -- Snippet
+  '', -- Color
+  '', -- File
+  '', -- Reference
+  '', -- Folder
+  '', -- EnumMember
+  '', -- Constant
+  '', -- Struct
+  '', -- Event
+  'ﬦ', -- Operator
+  '', -- TypeParameter
+}

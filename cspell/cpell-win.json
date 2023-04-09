@@ -1,0 +1,36 @@
+{
+  "allowCompoundWords": true,
+  "dictionaries": [
+    "dotfiles",
+    "user",
+    "lua",
+    "php",
+    "java",
+    "html",
+    "css"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "dotfiles",
+      "path": "~/AppData/Local/cspell/dotfiles.txt",
+      "description": "dotfiles dictionary"
+    },
+    {
+      "name": "user",
+      "path": "~/AppData/Local/cspell/user.txt",
+      "description": "User local dictionary"
+    },
+  ],
+  "languageSettings": [
+    {
+      "languageId": "lua",
+      "locale": "*",
+      "ignoreRegExpList": [
+        "/require.*/"
+      ],
+      "dictionaries": [
+        "lua"
+      ]
+    },
+  ]
+}

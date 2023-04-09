@@ -50,6 +50,14 @@ vim.keymap.set('n', ';f',
       hidden = true
     })
   end)
+vim.keymap.set('n', ';g',
+  function()
+    builtin.live_grep({})
+  end)
+vim.keymap.set('n', ';*',
+  function()
+    builtin.grep_string({})
+  end)
 vim.keymap.set("n", "sf", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",

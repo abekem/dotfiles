@@ -12,6 +12,8 @@ end
 packer.startup(function(use)
   -- Packer can manage itself
   use { 'wbthomason/packer.nvim', opt = true }
+
+  -- UI
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
@@ -20,7 +22,15 @@ packer.startup(function(use)
   use { 'nvim-lua/plenary.nvim' }
   use { 'folke/lsp-colors.nvim' }
   use { 'norcalli/nvim-colorizer.lua' }
+  use { 'nvim-tree/nvim-web-devicons' }
+  use { 'akinsho/nvim-bufferline.lua' }
+  use { 'lewis6991/gitsigns.nvim' }
+  use { 'dinhhuy258/git.nvim' } -- For git blame & browse
+  -- use { "lukas-reineke/indent-blankline.nvim" }
+  use { 'kevinhwang91/nvim-hlslens' }
+  use { 'petertriho/nvim-scrollbar' }
 
+  -- LSP
   use { 'hrsh7th/cmp-nvim-lsp' }            -- nvim-cmp source for neovim's built-in LSP
   use { 'hrsh7th/nvim-cmp' }                -- Completion
   use { 'neovim/nvim-lspconfig' }           -- LSP
@@ -35,11 +45,15 @@ packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
-  use { 'nvim-tree/nvim-web-devicons' }
 
-  -- install telescope
+  -- File
   use { 'nvim-telescope/telescope.nvim' }
   use { 'nvim-telescope/telescope-file-browser.nvim' }
+
+  -- Move
+  use { 'phaazon/hop.nvim' }
+  use { 'rapan931/lasterisk.nvim' }
+  -- Edit
   use { 'windwp/nvim-autopairs' }
   use { 'windwp/nvim-ts-autotag' }
   use { 'numToStr/Comment.nvim',
@@ -48,11 +62,8 @@ packer.startup(function(use)
     }
   }
   use { "kylechui/nvim-surround" }
-  use { 'akinsho/nvim-bufferline.lua' }
 
-  use { 'lewis6991/gitsigns.nvim' }
-  use { 'dinhhuy258/git.nvim' } -- For git blame & browse
+  use { "johmsalas/text-case.nvim" }
 
-  -- use { "lukas-reineke/indent-blankline.nvim" }
   use { 'keaising/im-select.nvim' }
 end)

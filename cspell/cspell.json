@@ -12,12 +12,12 @@
   "dictionaryDefinitions": [
     {
       "name": "dotfiles",
-      "path": "~/AppData/Local/cspell/dotfiles.txt",
+      "path": "./dotfiles.txt",
       "description": "dotfiles dictionary"
     },
     {
       "name": "user",
-      "path": "~/AppData/Local/cspell/user.txt",
+      "path": "./user.txt",
       "description": "User local dictionary"
     },
   ],

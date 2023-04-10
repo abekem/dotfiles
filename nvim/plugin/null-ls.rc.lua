@@ -17,14 +17,13 @@ local cspell_config_dir
 local cspell_config_filename
 if vim.fn.has "mac" == 1 then
   cspell_config_dir = '~/.config/cspell'
-  cspell_config_filename = 'cspell-mac.json'
+  cspell_config_filename = '/cspell-mac.json'
 end
 if vim.fn.has "win32" == 1 then
-  cspell_config_dir = '~/AppData/Local/cspell'
-  cspell_config_filename = 'cspell-win.json'
+  cspell_config_dir = vim.env.LOCALAPPDATA .. '/cspell'
 end
 local cspell_files = {
-  config = vim.call('expand', cspell_config_dir .. '/' .. cspell_config_filename),
+  config = vim.call('expand', cspell_config_dir .. '/cspell.json'),
   dotfiles = vim.call('expand', cspell_config_dir .. '/dotfiles.txt'),
   user = vim.call('expand', cspell_config_dir .. '/user.txt'),
 }

@@ -93,7 +93,14 @@ end
 
 nvim_lsp.html.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  settings = {
+    css = {
+      lint = {
+        validProperties = {},
+      },
+    },
+  },
 }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

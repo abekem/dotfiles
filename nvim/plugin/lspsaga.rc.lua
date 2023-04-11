@@ -9,7 +9,8 @@ saga.setup({
     colors = {
       normal_bg = '#002b36'
     }
-  }
+  },
+  request_timeout = 5000,
 })
 
 local diagnostic = require("lspsaga.diagnostic")

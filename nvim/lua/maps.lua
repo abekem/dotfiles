@@ -25,9 +25,9 @@ keymap.set('', 'sk', '<C-w>k')
 keymap.set('', 'sj', '<C-w>j')
 keymap.set('', 'sl', '<C-w>l')
 -- Move Buffer
-keymap.set('n', 'bn', ':bn<Return>')
-keymap.set('n', 'bp', ':bp<Return>')
-keymap.set('n', 'bm', ':bm<Return>')
+-- keymap.set('n', 'bn', ':bn<Return>')
+-- keymap.set('n', 'bp', ':bp<Return>')
+-- keymap.set('n', 'bm', ':bm<Return>')
 
 -- Escape
 keymap.set('i', 'jj', '<Esc>')

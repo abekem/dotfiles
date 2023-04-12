@@ -26,7 +26,7 @@ packer.startup(function(use)
   use { 'akinsho/nvim-bufferline.lua' }
   use { 'lewis6991/gitsigns.nvim' }
   use { 'dinhhuy258/git.nvim' } -- For git blame & browse
-  -- use { "lukas-reineke/indent-blankline.nvim" }
+  use { "lukas-reineke/indent-blankline.nvim" }
   use { 'kevinhwang91/nvim-hlslens' }
   use { 'petertriho/nvim-scrollbar' }
 

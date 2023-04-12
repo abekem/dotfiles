@@ -1,1 +1,2 @@
 vsplit 
+nvim 

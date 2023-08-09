@@ -38,7 +38,7 @@ packer.startup(function(use)
   use { 'williamboman/mason.nvim' }
   use { 'williamboman/mason-lspconfig.nvim' }
 
-  use { 'glepnir/lspsaga.nvim' } -- LSP UIs
+  use { 'nvimdev/lspsaga.nvim' } -- LSP UIs
 
   use { 'mfussenegger/nvim-jdtls' }
   use {
@@ -51,7 +51,8 @@ packer.startup(function(use)
   use { 'nvim-telescope/telescope-file-browser.nvim' }
 
   -- Move
-  use { 'phaazon/hop.nvim' }
+  -- use { 'phaazon/hop.nvim' }
+  use { 'rlane/pounce.nvim' }
   use { 'rapan931/lasterisk.nvim' }
   -- Edit
   use { 'windwp/nvim-autopairs' }

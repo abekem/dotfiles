@@ -22,6 +22,7 @@ end
 if vim.fn.has "win32" == 1 then
   cspell_config_dir = vim.env.LOCALAPPDATA .. '/cspell'
 end
+if vim.fn.has "unix" == 1 then return end
 local cspell_files = {
   config = vim.call('expand', cspell_config_dir .. '/cspell.json'),
   dotfiles = vim.call('expand', cspell_config_dir .. '/dotfiles.txt'),

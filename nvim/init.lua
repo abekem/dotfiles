@@ -21,11 +21,26 @@ if not vim.g.vscode then
   })
 end
 
-if vim.fn.has "macunix" == 1 then
+if vim.fn.has "macunix" == 1 or vim.fn.has "unix" then
   vim.opt.clipboard:append { 'unnamedplus' }
 end
 if vim.fn.has "win32" == 1 then
   vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
+end
+local in_wsl = os.getenv('WSL_DISTRO_NAME') ~= nil
+if in_wsl then
+  -- vim.g.clipboard = {
+  --   name = "WslClipboard",
+  --   copy = {
+  --     ["+"] = "clip.exe",
+  --     ["*"] = "clip.exe"
+  --   },
+  --   paste = {
+  --     ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  --     ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))'
+  --   },
+  --   cache_enable = false,
+  -- }
 end
 
 -- 折り畳みをインデント単位で有効にする

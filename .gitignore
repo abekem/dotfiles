@@ -3,6 +3,10 @@
 # Fish local config
 fish/config-local.fish
 fish/fish_variables
+fish/functions/
+fish/completions/
+fish/conf.d/*
+!/fish/conf.d/tide.fish
 
 # Karabiner
 karabiner/automatic_backups

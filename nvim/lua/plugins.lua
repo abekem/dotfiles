@@ -1,70 +1,92 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
-
-local status, packer = pcall(require, "packer")
-if (not status) then
-  print("Packer is not installed")
-  return
-end
-
-packer.startup(function(use)
-  -- Packer can manage itself
-  use { 'wbthomason/packer.nvim', opt = true }
+local plugins = {
+--   -- Packer can manage itself
+--   { 'wbthomason/packer.nvim', opt = true },
 
   -- UI
-  use {
+  {
     'svrana/neosolarized.nvim',
-    requires = { 'tjdevries/colorbuddy.nvim' }
-  }
-  use { 'nvim-lualine/lualine.nvim' }
-  use { 'nvim-lua/plenary.nvim' }
-  use { 'folke/lsp-colors.nvim' }
-  use { 'norcalli/nvim-colorizer.lua' }
-  use { 'nvim-tree/nvim-web-devicons' }
-  use { 'akinsho/nvim-bufferline.lua' }
-  use { 'lewis6991/gitsigns.nvim' }
-  use { 'dinhhuy258/git.nvim' } -- For git blame & browse
-  use { "lukas-reineke/indent-blankline.nvim" }
-  use { 'kevinhwang91/nvim-hlslens' }
-  use { 'petertriho/nvim-scrollbar' }
+    dependencies = { 'tjdevries/colorbuddy.nvim' },
+  },
+  { 'nvim-lualine/lualine.nvim' },
+  { 'nvim-lua/plenary.nvim' },
+  { 'folke/lsp-colors.nvim' },
+  { 'norcalli/nvim-colorizer.lua' },
+  { 'nvim-tree/nvim-web-devicons' },
+  { 'akinsho/nvim-bufferline.lua' },
+  { 'lewis6991/gitsigns.nvim' },
+  { 'dinhhuy258/git.nvim' }, -- For git blame & browse
+--   { "lukas-reineke/indent-blankline.nvim" },
+  { 'kevinhwang91/nvim-hlslens' },
+  { 'petertriho/nvim-scrollbar' },
 
   -- LSP
-  use { 'hrsh7th/cmp-nvim-lsp' }            -- nvim-cmp source for neovim's built-in LSP
-  use { 'hrsh7th/nvim-cmp' }                -- Completion
-  use { 'neovim/nvim-lspconfig' }           -- LSP
-  use { 'jose-elias-alvarez/null-ls.nvim' } -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-  use { 'williamboman/mason.nvim' }
-  use { 'williamboman/mason-lspconfig.nvim' }
+  { 'hrsh7th/cmp-nvim-lsp' },            -- nvim-cmp source for neovim's built-in LSP
+  { 'hrsh7th/nvim-cmp' },                -- Completion
+  { 'neovim/nvim-lspconfig' },           -- LSP
+  { 'jose-elias-alvarez/null-ls.nvim' }, -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+  { 'williamboman/mason.nvim' },
+  { 'williamboman/mason-lspconfig.nvim' },
 
-  use { 'nvimdev/lspsaga.nvim' } -- LSP UIs
+  { 'nvimdev/lspsaga.nvim' }, -- LSP UIs
 
-  use { 'mfussenegger/nvim-jdtls' }
-  use {
+  { 'mfussenegger/nvim-jdtls' },
+  {
     'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-  }
+    build = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  },
 
   -- File
-  use { 'nvim-telescope/telescope.nvim' }
-  use { 'nvim-telescope/telescope-file-browser.nvim' }
+  { 'nvim-telescope/telescope.nvim' },
+  { 'nvim-telescope/telescope-file-browser.nvim' },
 
   -- Move
-  -- use { 'phaazon/hop.nvim' }
-  use { 'rlane/pounce.nvim' }
-  use { 'rapan931/lasterisk.nvim' }
+  -- { 'phaazon/hop.nvim' },
+  { 'rlane/pounce.nvim' },
+  { 'rapan931/lasterisk.nvim' },
   -- Edit
-  use { 'windwp/nvim-autopairs' }
-  use { 'windwp/nvim-ts-autotag' }
-  use { 'numToStr/Comment.nvim',
-    requires = {
+  { 'windwp/nvim-autopairs' },
+  { 'windwp/nvim-ts-autotag' },
+  { 'numToStr/Comment.nvim',
+    dependencies = {
       'JoosepAlviste/nvim-ts-context-commentstring'
-    }
-  }
-  use { "kylechui/nvim-surround" }
+    },
+  },
+  { "kylechui/nvim-surround" },
 
-  use { "johmsalas/text-case.nvim" }
+  { "johmsalas/text-case.nvim" },
 
-  use { 'keaising/im-select.nvim' }
-end)
+  { 'keaising/im-select.nvim' },
+    
+}
+
+local opts = {
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        'gzip',
+        'matchit',
+        --'matchparen',
+        --'netrwPlugin',
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin',
+      },
+    },
+  },
+}
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup(plugins, opts)

@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 if not vim.g.vscode then
   -- 行番号を表示
   vim.opt.number = true
@@ -49,6 +51,6 @@ vim.opt.foldenable = false
 --undoを永続化
 vim.opt.undofile = true
 
-require('plugins')
 require('highlights')
 require('maps')
+require('plugins')

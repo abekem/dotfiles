@@ -1,4 +1,3 @@
-live_config_reload = true
 
 [window]
 dynamic_title = true
@@ -39,3 +38,6 @@ family = "UDEV Gothic NF"
 [font.offset]
 x = 0
 y = 0
+
+[general]
+live_config_reload = true

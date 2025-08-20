@@ -1,3 +1,17 @@
 basePresentationID: "1WRUTR7QSA-5NpwmQ9fuLx3ukgdE7siPnBYhtfBMZziA"
 breaks: true
 folderID: "1hRhRQbvxTBoZU4w8kfVGXtOVts1x__yL"
+defaults:
+  - if: page == 1
+    layout: "w-title"
+  - if: topHeadingLevel == 1
+    layout: "w-chapter"
+  - if: topHeadingLevel == 2
+    layout: "w-section"
+  # Skip pages with TODO in speaker notes
+  # これ動いてない？
+  - if: speakerNote.contains("TODO")
+    skip: true
+  # Default layout for all other pages
+  - if: true
+    layout: "w-page"

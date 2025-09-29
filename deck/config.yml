@@ -8,10 +8,10 @@ defaults:
     layout: "w-chapter"
   - if: topHeadingLevel == 2
     layout: "w-section"
+  # ページ設定が未設定の場合のみ適用されるため、レイアウトの設定ができない
   # Skip pages with TODO in speaker notes
-  # これ動いてない？
-  - if: speakerNote.contains("TODO")
-    skip: true
+  # - if: speakerNote.contains("TODO")
+  #   skip: true
   # Default layout for all other pages
   - if: true
     layout: "w-page"

@@ -1,0 +1,3 @@
+vsplit 
+nvim 
+jdtls 

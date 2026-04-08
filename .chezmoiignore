@@ -1,0 +1,9 @@
+README.md
+
+{{- if eq .chezmoi.os "windows" }}
+# ignore on windows
+
+{{- else}}
+# ignore on macos / linux
+
+{{- end }}

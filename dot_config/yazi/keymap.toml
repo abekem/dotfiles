@@ -1,0 +1,7 @@
+[mgr]
+prepend_keymap = [
+  { on = "<C-t>", run = "shell -- zellij ac new-tab --cwd %s1", desc = "Open current in new zellij tab" },
+  { on = [ "<C-p>", "l" ], run = "shell -- zellij run -c -d right -- nu -c 'cd %s1 ; exec nu'", desc = "Open current in right pane" },
+  { on = [ "<C-p>", "j" ], run = "shell -- zellij run -c -d down -- nu -c 'cd %s1 ; exec nu'", desc = "Open current in lower pane" },
+]
+
